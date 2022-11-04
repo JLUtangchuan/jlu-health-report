@@ -19,8 +19,10 @@ def check(username, password, grade='YJS'):
     for _ in range(10):
         try:
             s = requests.Session()
+            s.keep_alive = False
             s.verify= False
-
+            
+            s.proxies = {"https": "122.136.212.132:53281", "http": "122.136.212.132:53281", }
             headers = {'User-Agent': UA}
 
             #获取pid
