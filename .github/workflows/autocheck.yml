@@ -3,10 +3,10 @@ name: 'JLU autocheck bot'
 on:
   push:
   schedule:
-    - cron: '0 13 * * *'  # utc+8 21:00
-    - cron: '0 24 * * *'  # utc+8 7:00
+    - cron: '30 23 * * *'  # utc+8 7:00
   watch:
     types: started
+
 
 jobs:
   build:
