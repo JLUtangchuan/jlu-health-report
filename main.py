@@ -21,12 +21,12 @@ def check(username, password, grade='YJS'):
             s = requests.Session()
             s.keep_alive = False
             s.verify= False
-            
-            s.proxies = {"https": "218.185.234.194:8080", "http": "218.185.234.194:8080"}
+            proxy = "http://218.185.234.194:8080"    
+            proxies = {"https": proxy, "http": proxy}
             headers = {'User-Agent': UA}
 
             #获取pid
-            login_html = s.get(url=login_url, headers=headers)
+            login_html = s.get(url=login_url, headers=headers, proxies=proxies)
             soup = BeautifulSoup(login_html.text, 'lxml')
             pid = soup.find(name="input", attrs={"name" :"pid"}).get('value')
 
