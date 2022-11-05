@@ -22,7 +22,7 @@ def check(username, password, grade='YJS'):
             s.keep_alive = False
             s.verify= False
             
-            s.proxies = {"https": "122.136.212.132:53281", "http": "122.136.212.132:53281", }
+            s.proxies = {"https": "218.185.234.194:8080", "http": "218.185.234.194:8080"}
             headers = {'User-Agent': UA}
 
             #获取pid
